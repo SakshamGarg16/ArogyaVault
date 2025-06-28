@@ -118,12 +118,9 @@ EMAIL_PASS=your_email_app_password
 ```env
 # API Configuration
 VITE_API_URL=http://localhost:3053
-VITE_SOCKET_URL=ws://localhost:3053
 
 # Blockchain
 VITE_POLYGON_RPC=your_polygon_rpc_url
-VITE_CONTRACT_ADDRESS=your_smart_contract_address
-```
 VITE_CONTRACT_ADDRESS=your_smart_contract_address
 ```
 
@@ -131,24 +128,39 @@ VITE_CONTRACT_ADDRESS=your_smart_contract_address
 
 ```
 ArogyaVault/
-├── Frontend/              # React frontend
-│   ├── public/            # Static files
-│   └── src/               # Source code
-│       ├── components/    # Reusable components
-│       ├── pages/         # Page components
-│       ├── context/       # React context
-│       ├── hooks/         # Custom hooks
-│       └── utils/         # Utility functions
+├── Frontend/                   # React frontend (Vite + React)
+│   ├── public/                 # Static assets
+│   │   └── images/             # Application images
+│   └── src/                    # Source code
+│       ├── assets/             # Static assets (icons, logos, etc.)
+│       ├── components/         # Reusable UI components
+│       │   ├── common/         # Common components (buttons, modals, etc.)
+│       │   ├── layout/         # Layout components (header, footer, sidebar)
+│       │   └── ui/             # UI components (forms, cards, etc.)
+│       ├── pages/              # Page components
+│       ├── context/            # React context providers
+│       ├── hooks/              # Custom React hooks
+│       ├── services/           # API services
+│       ├── utils/              # Utility functions
+│       └── App.jsx             # Main App component
 │
-├── Backend/               # Node.js backend
-│   ├── controllers/       # Route controllers
-│   ├── models/            # MongoDB models
-│   ├── routes/            # API routes
-│   ├── middlewares/       # Express middlewares
-│   ├── services/          # Business logic
-│   └── ai/                # AI server
+├── Backend/                    # Node.js + Express backend
+│   ├── config/                # Configuration files
+│   ├── controllers/           # Request handlers
+│   ├── middleware/            # Express middleware
+│   ├── models/                # Database models
+│   ├── routes/                # API routes
+│   ├── services/              # Business logic
+│   ├── utils/                 # Utility functions
+│   ├── ai/                    # AI services and models
+│   ├── app.js                 # Express app configuration
+│   └── server.js              # Server entry point
 │
-└── smart-contracts/       # Solidity smart contracts
+└── smart-contracts/           # Blockchain smart contracts
+    ├── contracts/             # Solidity contracts
+    ├── migrations/            # Deployment scripts
+    ├── test/                  # Test files
+    └── scripts/               # Utility scripts
 ```
 
 ## 🔄 How It Works
