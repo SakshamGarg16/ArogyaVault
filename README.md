@@ -38,6 +38,8 @@ A comprehensive healthcare management platform designed for educational institut
 - Solidity (Smart Contracts)
 - Polygon Network
 - Web3.js / Ethers.js
+- BigchainDB
+- IPFS
 
 ## 🚀 Getting Started
 
@@ -87,19 +89,41 @@ A comprehensive healthcare management platform designed for educational institut
 
 ### Backend (`.env`)
 ```env
-PORT=5000
-MONGODB_URI=your_mongodb_uri
+# Server Configuration
+PORT=3053
+
+# Database
+MONGODB_URI=your_mongodb_connection_string
+
+# Authentication
 JWT_SECRET=your_jwt_secret
-CLOUDINARY_CLOUD_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_cloudinary_key
-CLOUDINARY_API_SECRET=your_cloudinary_secret
+
+# Cloudinary Configuration
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+# AI Services
+GEMINI_API=your_gemini_api_key
+
+# Security
+ENCRYPTION_SALT=your_encryption_salt
+
+# Email Configuration
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_app_password
 ```
 
 ### Frontend (`.env`)
 ```env
-VITE_API_URL=http://localhost:5000
-VITE_SOCKET_URL=ws://localhost:5000
+# API Configuration
+VITE_API_URL=http://localhost:3053
+VITE_SOCKET_URL=ws://localhost:3053
+
+# Blockchain
 VITE_POLYGON_RPC=your_polygon_rpc_url
+VITE_CONTRACT_ADDRESS=your_smart_contract_address
+```
 VITE_CONTRACT_ADDRESS=your_smart_contract_address
 ```
 
