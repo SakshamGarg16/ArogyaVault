@@ -1,53 +1,184 @@
-# Arogya Vault - Digital Healthcare Management System for Educational Institutions
+# ArogyaVault - Digital Healthcare Management System
 
-"The absence of a centralized healthcare management system in educational institutions for managing student health records leads to delays in processing medical leave requests and restricted access to student health records. This impacts timely decision-making and efficient healthcare service delivery."
+A comprehensive healthcare management platform designed for educational institutions to streamline health record management, appointment scheduling, and medical leave processing.
 
-Our aim is to make a Healthcare Management System to reduce inefficiencies caused due to paperwork, increase accessiblity for student and create a one-stop healthcare solution targeted for college/school going students
+## 🚀 Key Features
 
-## Features
-- Health Record Management – Securely store, search, and retrieve health records with keyword-based search.
-- Appointment Scheduling – Book doctor consultations through the platform with in-app video calls.
-- Seamless Leave Application – Apply for leave effortlessly with a paperless, online system.
-- Voice-Enabled Assistance – Book appointments and apply for leave using voice commands.
-- Real-Time Notifications – Stay updated with alerts and reminders for appointments and leave requests.
-- AI-Powered Symptom Diagnosis – Get instant health insights with an AI bot that analyzes symptoms.
-- AI Bots for Assistance – Dedicated AI bots to handle medical leave concerns and appointment queries.
-- Blockchain-Based Certificate Storage – Ensure tamper-proof medical certificates using the Polygon blockchain.
+- **Health Record Management** - Secure storage and retrieval of student health records
+- **Appointment Scheduling** - Book doctor consultations with in-app video calls
+- **Digital Leave Application** - Paperless medical leave requests and approvals
+- **Voice-Enabled Assistance** - Hands-free operation using voice commands
+- **AI-Powered Diagnosis** - Symptom analysis and health insights
+- **Real-Time Notifications** - Alerts for appointments and leave status
+- **Blockchain Integration** - Tamper-proof medical certificate storage on Polygon
+- **Telemedicine** - Built-in video consultation capabilities
 
-## Project Setup (Local Development)
+## 🛠️ Tech Stack
 
-This guide provides step-by-step instructions for setting up the project locally. The project consists of separate frontend and backend servers.
+### Frontend
+- React.js 18
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Web3.js / Viem (Blockchain integration)
+- Socket.IO Client (Real-time updates)
 
-## Prerequisites
-Make sure you have the following installed:
-- Node.js (latest LTS version recommended)
-- npm (comes with Node.js)
+### Backend
+- Node.js with Express
+- MongoDB (Database)
+- JWT Authentication
+- Socket.IO (WebSockets)
+- Cloudinary (Media storage)
+
+### AI/ML
+- Python with Flask
+- TensorFlow/PyTorch (for symptom analysis)
+
+### Blockchain
+- Solidity (Smart Contracts)
+- Polygon Network
+- Web3.js / Ethers.js
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- Python (v3.8+)
 - MongoDB (local or cloud instance)
-- Python (latest version)
+- npm or yarn
 
-## Technologies Used
+### Installation
 
-- Frontend: React.js, Tailwind CSS
-- Backend: Node.js, Express.js
-- Database: MongoDB
-- AI Server: Python, Flask
-- IDE: VS Code, PyCharm
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/SakshamGarg16/ArogyaVault.git
+   cd ArogyaVault
+   ```
 
-## Frontend Setup
-1. Navigate to the frontend directory:
-   ```sh
-   cd frontend
+2. **Set up the Backend**
+   ```bash
+   cd Backend
+   npm install
+   cp .env.example .env  # If exists, or create a new .env file
+   # Update .env with your configuration
+   npm run dev
    ```
-2. Install dependencies:
-   ```sh
-   npm i
+
+3. **Set up the Frontend**
+   ```bash
+   cd ../Frontend
+   npm install
+   cp .env.example .env  # If exists, or create a new .env file
+   # Update .env with your configuration
+   npm run dev
    ```
-3. Create a `.env` file in the `frontend` directory and add the following:
-   ```env
-   VITE_API_URL=<YOUR_BACKEND_URL>
+
+4. **Set up the AI Server** (if applicable)
+   ```bash
+   cd ../Backend/ai
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   python app.py
    ```
-4. Start the development server:
-   ```sh
+
+## 🔧 Environment Variables
+
+### Backend (`.env`)
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_key
+CLOUDINARY_API_SECRET=your_cloudinary_secret
+```
+
+### Frontend (`.env`)
+```env
+VITE_API_URL=http://localhost:5000
+VITE_SOCKET_URL=ws://localhost:5000
+VITE_POLYGON_RPC=your_polygon_rpc_url
+VITE_CONTRACT_ADDRESS=your_smart_contract_address
+```
+
+## 📁 Project Structure
+
+```
+ArogyaVault/
+├── Frontend/              # React frontend
+│   ├── public/            # Static files
+│   └── src/               # Source code
+│       ├── components/    # Reusable components
+│       ├── pages/         # Page components
+│       ├── context/       # React context
+│       ├── hooks/         # Custom hooks
+│       └── utils/         # Utility functions
+│
+├── Backend/               # Node.js backend
+│   ├── controllers/       # Route controllers
+│   ├── models/            # MongoDB models
+│   ├── routes/            # API routes
+│   ├── middlewares/       # Express middlewares
+│   ├── services/          # Business logic
+│   └── ai/                # AI server
+│
+└── smart-contracts/       # Solidity smart contracts
+```
+
+## 🔄 How It Works
+
+1. **User Authentication**
+   - Students and staff register/login using institutional credentials
+   - JWT-based authentication for secure access
+
+2. **Health Records**
+   - Students can upload and manage their health records
+   - Role-based access control for sensitive information
+
+3. **Appointment Booking**
+   - View available doctors and time slots
+   - Book appointments with preferred healthcare providers
+   - Receive real-time notifications
+
+4. **Leave Management**
+   - Submit medical leave applications
+   - Attach digital prescriptions/certificates
+   - Track application status in real-time
+
+5. **AI Assistant**
+   - **Medical History Assistant**
+     - Answers student queries about their medical history
+     - Provides explanations of medical terms and conditions
+     - Retrieves and summarizes past health records
+   - **Leave Management Assistant**
+     - Answers questions about leave history and status
+     - Explains leave policies and requirements
+     - Provides updates on pending and approved leaves
+   - **Doctor's AI Assistant**
+     - Offers medical insights for healthcare professionals
+     - Analyzes patient data and suggests diagnoses
+     - Provides treatment recommendations based on medical records
+
+6. **Blockchain Integration**
+   - Store medical certificates on Polygon blockchain
+   - Verify document authenticity
+   - Immutable record keeping
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 🙏 Acknowledgments
+
+- [Your Institution/Organization Name]
+- Mentors and Advisors
+- Open-source contributors
    npm run dev
    ```
 
