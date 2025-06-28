@@ -166,6 +166,20 @@ ArogyaVault/
    - Verify document authenticity
    - Immutable record keeping
 
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](./Frontend/public/images/Dashboard.jpg)
+
+### Health Records
+![Health Records](./Frontend/public/images/Home.jpg)
+
+### Appointment Booking
+![Appointment Booking](./Frontend/public/images/Admin.jpg)
+
+### AI Assistant
+![AI Assistant](./Frontend/public/images/Doctor's.jpg)
+
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -173,14 +187,6 @@ ArogyaVault/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 🙏 Acknowledgments
-
-- [Your Institution/Organization Name]
-- Mentors and Advisors
-- Open-source contributors
-   npm run dev
-   ```
 
 ## Backend Setup
 1. Navigate to the backend directory:
