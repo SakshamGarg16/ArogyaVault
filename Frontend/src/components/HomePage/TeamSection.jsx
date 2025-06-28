@@ -10,7 +10,7 @@ const teamMembers = [
   {
     name: "Saksham Garg ",
     role: "Backend Lead/Blockchain Lead",
-    experience: "Backend Expert , Blockchain Enthusiast ",
+    experience: "Backend Expert , Blockchain Enthusiast | International Conference SCI 25 Best Paper",
     image: "./src/assets/Saksham.jpg"
   },
   {
@@ -20,10 +20,10 @@ const teamMembers = [
     image: "./src/assets/tanissa.jpg"
   },
   {
-    name: "Swanand Sinarkar  ",
+    name: "Swanand Sinnarkar  ",
     role: "Backend Developer ",
-    experience: "Pre-Final Year Student @ IETDAVV | MERN | Intern @ ITJOBXS | Ex-Nexus | 400+ LeetCode (Max 1574) | CodeChef 2★ | Aspiring Software Engineer",
-    image: "./src/assets/Saksham.jpg"
+    experience: "Pre-Final Year Student @ IETDAVV | MERN Enthusiast",
+    image: "./src/assets/Swanand.jpg"
   },
 
 ];
