@@ -287,6 +287,50 @@ def doctor_insights():
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
+    
+
+# Update the disease_prediction endpoint to remove auth requirement
+@app.route("/disease_prediction", methods=["POST"])
+def disease_prediction():
+    try:
+        data = request.json
+        symptoms = data.get("symptoms", [])
+        additional_info = data.get("additionalInfo", "")
+        
+        if not symptoms:
+            return jsonify({"error": "Symptoms are required for prediction"}), 400
+        
+        # Create prompt for Gemini without user-specific data
+        prompt = f"""
+        You are a medical AI assistant helping with disease prediction based on symptoms.
+        
+        Current Symptoms: {', '.join(symptoms)}
+        Additional Information: {additional_info}
+        
+        Based on the provided symptoms, please:
+        1. Suggest possible conditions/diseases (with confidence levels)
+        2. Recommend immediate actions or precautions
+        3. Suggest when to seek medical attention
+        4. Provide general health advice
+        
+        Important: Always emphasize that this is not a substitute for professional medical diagnosis and the patient should consult a healthcare provider for proper evaluation.
+        
+        Format your response in a clear, structured manner.
+        """
+        
+        response = model.generate_content(prompt)
+        
+        return jsonify({
+            "status": "success",
+            "prediction": response.text,
+            "symptoms_analyzed": symptoms,
+            "timestamp": str(ObjectId().generation_time)
+        })
+        
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+
 
 if __name__ == "__main__":
     port = int(os.getenv("AI_PORT", 5000))
