@@ -35,8 +35,6 @@ A comprehensive healthcare management platform designed for educational institut
 - TensorFlow/PyTorch (for symptom analysis)
 
 ### Blockchain
-- Solidity (Smart Contracts)
-- Polygon Network
 - Web3.js / Ethers.js
 - BigchainDB
 - IPFS
@@ -145,22 +143,22 @@ ArogyaVault/
 │       └── App.jsx             # Main App component
 │
 ├── Backend/                    # Node.js + Express backend
-│   ├── config/                # Configuration files
-│   ├── controllers/           # Request handlers
-│   ├── middleware/            # Express middleware
-│   ├── models/                # Database models
-│   ├── routes/                # API routes
-│   ├── services/              # Business logic
-│   ├── utils/                 # Utility functions
-│   ├── ai/                    # AI services and models
-│   ├── app.js                 # Express app configuration
-│   └── server.js              # Server entry point
+│   ├── config/                 # Configuration files
+│   ├── controllers/            # Request handlers
+│   ├── middleware/             # Express middleware
+│   ├── models/                 # Database models
+│   ├── routes/                 # API routes
+│   ├── services/               # Business logic
+│   ├── utils/                  # Utility functions
+│   ├── ai/                     # AI services and models
+│   ├── app.js                  # Express app configuration
+│   └── server.js               # Server entry point
 │
-└── smart-contracts/           # Blockchain smart contracts
-    ├── contracts/             # Solidity contracts
-    ├── migrations/            # Deployment scripts
-    ├── test/                  # Test files
-    └── scripts/               # Utility scripts
+└── smart-contracts/            # Blockchain smart contracts
+    ├── contracts/              # Solidity contracts
+    ├── migrations/             # Deployment scripts
+    ├── test/                   # Test files
+    └── scripts/                # Utility scripts
 ```
 
 ## 🔄 How It Works
@@ -198,7 +196,7 @@ ArogyaVault/
      - Provides treatment recommendations based on medical records
 
 6. **Blockchain Integration**
-   - Store medical certificates on Polygon blockchain
+   - Store medical certificates on blockchain
    - Verify document authenticity
    - Immutable record keeping
 
