@@ -168,17 +168,17 @@ ArogyaVault/
 
 ## 📸 Screenshots
 
+### Health Records
+![SignUp/Login](./Frontend/public/images/Home.jpg)
+
 ### Dashboard
 ![Dashboard](./Frontend/public/images/Dashboard.jpg)
 
-### Health Records
-![Health Records](./Frontend/public/images/Home.jpg)
-
 ### Appointment Booking
-![Appointment Booking](./Frontend/public/images/Admin.jpg)
+![Admin Dashboard](./Frontend/public/images/Admin.jpg)
 
 ### AI Assistant
-![AI Assistant](./Frontend/public/images/Doctor's.jpg)
+![Doctors's Dashboard](./Frontend/public/images/Doctor's.jpg)
 
 ## 🤝 Contributing
 
